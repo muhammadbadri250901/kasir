@@ -1,65 +1,19 @@
-import React, { Component } from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import './App.css'
+// App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavbarComponent from './components/NavbarComponent';
-import { Col, Container, Row } from 'react-bootstrap';
-import ListCategories from './components/ListCategories';
-import Hasil from './components/Hasil';
-import { API_URL } from "./utils/constans";
-import axios from 'axios';
-import Menus from './components/Menus';
- 
-class App extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       menus: [],
-    }
-  }
-  
-  componentDidMount() {
-    axios
-    .get(API_URL+"produk")
-    .then(res => {
-      const menus = res.data;
-      this.setState({menus});
-    })
-    .catch(error => {
-      console.log(error);
-    })
-    
-  }
+import HomeComponent from './components/HomeComponent';
+import Daftarproduk from './pages/Daftarproduk';
 
-  render() {
-    const {menus} = this.state
-    return (
-    <div className='App'>
+function App() {
+  return (
+    <Router>
       <NavbarComponent />
-      <div className="mt-3">
-        <Container fluid>
-          <Row>
-            <ListCategories />
-            <Col>
-            <h4>Daftar Produk</h4>
-            <hr/>
-            <Row>
-              {menus && menus.map((menu) => (
-                <Menus 
-                key={menu.id}
-                menu={menu}
-                />
-              ))}
-            </Row>
-            </Col>
-            <Hasil />
-          </Row>
-        </Container>
-      </div>
-      </div>
-    );
-  }
+      <Routes>
+        <Route path="/" element={<HomeComponent />} />
+        <Route path="/produk" element={<Daftarproduk />} />
+      </Routes>
+    </Router>
+  );
 }
-
 export default App;

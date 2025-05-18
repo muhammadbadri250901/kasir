@@ -66,3 +66,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.kategori-aktif {
+  background-color: #ff6f61;
+  color: white;
+  font-weight: bold;
+  border: none;
+}

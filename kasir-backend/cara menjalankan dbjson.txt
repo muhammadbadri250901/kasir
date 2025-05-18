@@ -1,0 +1,6 @@
+1.instal json placeholder
+npm install json-server
+2.jalankan server
+npx json-server db.json
+
+link github:https://github.com/typicode/json-server

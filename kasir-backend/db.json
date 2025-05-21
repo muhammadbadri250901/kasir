@@ -1,28 +1,234 @@
 {
   "kategori": [
-    { "id": 1, "nama": "Makanan" },
-    { "id": 2, "nama": "Minuman" },
-    { "id": 3, "nama": "Cemilan" }
+    {
+      "id": "1",
+      "nama": "Makanan"
+    },
+    {
+      "id": "2",
+      "nama": "Minuman"
+    },
+    {
+      "id": "3",
+      "nama": "Cemilan"
+    }
   ],
   "produk": [
-    { "id": 1, "kode":"K001","nama": "Nasi Goreng", "kategori":{"id":1, "nama":"Makanan"} , "harga": 15000, "foto": "https://tse1.mm.bing.net/th?id=OIP.yn0e5SrfTPm2dq4TCBSrwAHaHa&pid=Api&P=0&h=220" },
-    { "id": 2, "kode":"K002","nama": "Mie Ayam", "kategori": {"id":1, "nama":"Makanan"}, "harga": 13000, "foto": "https://tse4.mm.bing.net/th?id=OIP.-ThAoxUeMnmtZkM_EWOs3AHaFF&pid=Api&P=0&h=220" },
-    { "id": 3, "kode":"K003","nama": "Sate Ayam", "kategori": {"id":1, "nama":"Makanan"}, "harga": 20000, "foto": "https://tse1.mm.bing.net/th?id=OIP.uarGCgkV-qPMJQsfqsUhtwHaEK&pid=Api&P=0&h=220" },
-    { "id": 4, "kode":"K004","nama": "Rendang", "kategori": {"id":1, "nama":"Makanan"}, "harga": 25000, "foto": "https://tse2.mm.bing.net/th?id=OIP.bwotarYmKkpj_onEfeLBuQHaE8&pid=Api&P=0&h=220" },
-    { "id": 5, "kode":"K005","nama": "Ayam Bakar", "kategori": {"id":1, "nama":"Makanan"}, "harga": 18000, "foto": "https://tse3.mm.bing.net/th?id=OIP._7e9EEYoxKFDWK83w0NzaAHaFP&pid=Api&P=0&h=220" },
-
-    { "id": 6, "kode":"K006","nama": "Es Teh", "kategori": {"id":2, "nama":"Minuman"}, "harga": 5000, "foto": "https://i.pinimg.com/originals/5d/31/ef/5d31ef90cd6c389e07bc48a08e583122.jpg" },
-    { "id": 7, "kode":"K007","nama": "Es Jeruk", "kategori": {"id":2, "nama":"Minuman"}, "harga": 6000, "foto": "https://tse2.mm.bing.net/th?id=OIP.Wbv9LlEH7Mgg_AqPOeFiDwHaJn&pid=Api&P=0&h=220" },
-    { "id": 8, "kode":"K008","nama": "Kopi Hitam", "kategori": {"id":2, "nama":"Minuman"}, "harga": 7000, "foto": "https://beritabeta.com/storage/img/2020/05/kopi-hitam-16106.jpg" },
-    { "id": 9, "kode":"K009","nama": "Susu Coklat", "kategori": {"id":2, "nama":"Minuman"}, "harga": 8000, "foto": "https://tse3.mm.bing.net/th?id=OIP.ib3QN30HLZn4yNGZ-1VD_wHaE8&pid=Api&P=0&h=220" },
-    { "id": 10,"kode":"K010","nama": "Jus Alpukat", "kategori": {"id":2, "nama":"Minuman"}, "harga": 12000, "foto": "https://tse2.mm.bing.net/th?id=OIP.9U6N1_d0Xn09DYG8Sx5y9AHaJ4&pid=Api&P=0&h=220" },
-
-    { "id": 11, "kode":"K011","nama": "Keripik Singkong", "kategori": {"id":3, "nama":"Cemilan"}, "harga": 7000, "foto": "https://tse4.mm.bing.net/th?id=OIP.vSlagiYvf_ewb5rpk4kbVAHaEK&pid=Api&P=0&h=220" },
-    { "id": 12, "kode":"K012","nama": "Kacang Goreng", "kategori": {"id":3, "nama":"Cemilan"}, "harga": 6000, "foto": "https://tse2.mm.bing.net/th?id=OIP.oph4MjvDREoHQSa8qPgcjwHaE8&pid=Api&P=0&h=220" },
-    { "id": 13, "kode":"K013","nama": "Permen Karet", "kategori": {"id":3, "nama":"Cemilan"}, "harga": 2000, "foto": "https://tse1.mm.bing.net/th?id=OIP.zffyL10YDpL8vFs5gjPgxQHaE8&pid=Api&P=0&h=220" },
-    { "id": 14, "kode":"K014","nama": "Biskuit Coklat", "kategori": {"id":3, "nama":"Cemilan"}, "harga": 8000, "foto": "https://tse4.mm.bing.net/th?id=OIP.iYMFTPi9xEOOFxPJAQuBqQHaEH&pid=Api&P=0&h=220" },
-    { "id": 15, "kode":"K015","nama": "Coklat Batang", "kategori": {"id":3, "nama":"Cemilan"}, "harga": 9000, "foto": "https://tse4.mm.bing.net/th?id=OIP.gK-oA5E1Ab8VStOJG-iKPwHaEK&pid=Api&P=0&h=220" }
+    {
+      "id": "1",
+      "kode": "K001",
+      "nama": "Nasi Goreng",
+      "kategori": {
+        "id": 1,
+        "nama": "Makanan"
+      },
+      "harga": 15000,
+      "foto": "https://tse1.mm.bing.net/th?id=OIP.yn0e5SrfTPm2dq4TCBSrwAHaHa&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "2",
+      "kode": "K002",
+      "nama": "Mie Ayam",
+      "kategori": {
+        "id": 1,
+        "nama": "Makanan"
+      },
+      "harga": 13000,
+      "foto": "https://tse4.mm.bing.net/th?id=OIP.-ThAoxUeMnmtZkM_EWOs3AHaFF&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "3",
+      "kode": "K003",
+      "nama": "Sate Ayam",
+      "kategori": {
+        "id": 1,
+        "nama": "Makanan"
+      },
+      "harga": 20000,
+      "foto": "https://tse1.mm.bing.net/th?id=OIP.uarGCgkV-qPMJQsfqsUhtwHaEK&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "4",
+      "kode": "K004",
+      "nama": "Rendang",
+      "kategori": {
+        "id": 1,
+        "nama": "Makanan"
+      },
+      "harga": 25000,
+      "foto": "https://tse2.mm.bing.net/th?id=OIP.bwotarYmKkpj_onEfeLBuQHaE8&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "5",
+      "kode": "K005",
+      "nama": "Ayam Bakar",
+      "kategori": {
+        "id": 1,
+        "nama": "Makanan"
+      },
+      "harga": 18000,
+      "foto": "https://tse3.mm.bing.net/th?id=OIP._7e9EEYoxKFDWK83w0NzaAHaFP&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "6",
+      "kode": "K006",
+      "nama": "Es Teh",
+      "kategori": {
+        "id": 2,
+        "nama": "Minuman"
+      },
+      "harga": 5000,
+      "foto": "https://i.pinimg.com/originals/5d/31/ef/5d31ef90cd6c389e07bc48a08e583122.jpg"
+    },
+    {
+      "id": "7",
+      "kode": "K007",
+      "nama": "Es Jeruk",
+      "kategori": {
+        "id": 2,
+        "nama": "Minuman"
+      },
+      "harga": 6000,
+      "foto": "https://tse2.mm.bing.net/th?id=OIP.Wbv9LlEH7Mgg_AqPOeFiDwHaJn&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "8",
+      "kode": "K008",
+      "nama": "Kopi Hitam",
+      "kategori": {
+        "id": 2,
+        "nama": "Minuman"
+      },
+      "harga": 7000,
+      "foto": "https://beritabeta.com/storage/img/2020/05/kopi-hitam-16106.jpg"
+    },
+    {
+      "id": "9",
+      "kode": "K009",
+      "nama": "Susu Coklat",
+      "kategori": {
+        "id": 2,
+        "nama": "Minuman"
+      },
+      "harga": 8000,
+      "foto": "https://tse3.mm.bing.net/th?id=OIP.ib3QN30HLZn4yNGZ-1VD_wHaE8&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "10",
+      "kode": "K010",
+      "nama": "Jus Alpukat",
+      "kategori": {
+        "id": 2,
+        "nama": "Minuman"
+      },
+      "harga": 12000,
+      "foto": "https://tse2.mm.bing.net/th?id=OIP.9U6N1_d0Xn09DYG8Sx5y9AHaJ4&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "11",
+      "kode": "K011",
+      "nama": "Keripik Singkong",
+      "kategori": {
+        "id": 3,
+        "nama": "Cemilan"
+      },
+      "harga": 7000,
+      "foto": "https://tse4.mm.bing.net/th?id=OIP.vSlagiYvf_ewb5rpk4kbVAHaEK&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "12",
+      "kode": "K012",
+      "nama": "Kacang Goreng",
+      "kategori": {
+        "id": 3,
+        "nama": "Cemilan"
+      },
+      "harga": 6000,
+      "foto": "https://tse2.mm.bing.net/th?id=OIP.oph4MjvDREoHQSa8qPgcjwHaE8&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "13",
+      "kode": "K013",
+      "nama": "Permen Karet",
+      "kategori": {
+        "id": 3,
+        "nama": "Cemilan"
+      },
+      "harga": 2000,
+      "foto": "https://tse1.mm.bing.net/th?id=OIP.zffyL10YDpL8vFs5gjPgxQHaE8&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "14",
+      "kode": "K014",
+      "nama": "Biskuit Coklat",
+      "kategori": {
+        "id": 3,
+        "nama": "Cemilan"
+      },
+      "harga": 8000,
+      "foto": "https://tse4.mm.bing.net/th?id=OIP.iYMFTPi9xEOOFxPJAQuBqQHaEH&pid=Api&P=0&h=220"
+    },
+    {
+      "id": "15",
+      "kode": "K015",
+      "nama": "Coklat Batang",
+      "kategori": {
+        "id": 3,
+        "nama": "Cemilan"
+      },
+      "harga": 9000,
+      "foto": "https://tse4.mm.bing.net/th?id=OIP.gK-oA5E1Ab8VStOJG-iKPwHaEK&pid=Api&P=0&h=220"
+    }
   ],
-  "keranjang": [],
+  "keranjang": [
+    {
+      "jumlah": 2,
+      "total_harga": 30000,
+      "produk": {
+        "id": "1",
+        "kode": "K001",
+        "nama": "Nasi Goreng",
+        "kategori": {
+          "id": 1,
+          "nama": "Makanan"
+        },
+        "harga": 15000,
+        "foto": "https://tse1.mm.bing.net/th?id=OIP.yn0e5SrfTPm2dq4TCBSrwAHaHa&pid=Api&P=0&h=220"
+      },
+      "id": "71b7"
+    },
+    {
+      "jumlah": 2,
+      "total_harga": 50000,
+      "produk": {
+        "id": "4",
+        "kode": "K004",
+        "nama": "Rendang",
+        "kategori": {
+          "id": 1,
+          "nama": "Makanan"
+        },
+        "harga": 25000,
+        "foto": "https://tse2.mm.bing.net/th?id=OIP.bwotarYmKkpj_onEfeLBuQHaE8&pid=Api&P=0&h=220"
+      },
+      "id": "560c"
+    },
+    {
+      "jumlah": 2,
+      "total_harga": 14000,
+      "produk": {
+        "id": "11",
+        "kode": "K011",
+        "nama": "Keripik Singkong",
+        "kategori": {
+          "id": 3,
+          "nama": "Cemilan"
+        },
+        "harga": 7000,
+        "foto": "https://tse4.mm.bing.net/th?id=OIP.vSlagiYvf_ewb5rpk4kbVAHaEK&pid=Api&P=0&h=220"
+      },
+      "id": "4297"
+    }
+  ],
   "pesanan": []
 }

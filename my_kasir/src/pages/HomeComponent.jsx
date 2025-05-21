@@ -64,7 +64,7 @@ export default function HomeComponent() {
                 e.target.style.color = '#ff6f61';
                 e.target.style.boxShadow = '0 4px 8px rgba(255, 111, 97, 0.5)';
               }}
-              onClick={() => navigate('/produk')} // Navigasi ke halaman daftar produk
+              onClick={() => navigate('/Daftarproduk')} // Navigasi ke halaman daftar produk
             >
               Mulai Sekarang
             </Button>

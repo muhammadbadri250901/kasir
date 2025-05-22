@@ -180,55 +180,6 @@
       "foto": "https://tse4.mm.bing.net/th?id=OIP.gK-oA5E1Ab8VStOJG-iKPwHaEK&pid=Api&P=0&h=220"
     }
   ],
-  "keranjang": [
-    {
-      "jumlah": 2,
-      "total_harga": 30000,
-      "produk": {
-        "id": "1",
-        "kode": "K001",
-        "nama": "Nasi Goreng",
-        "kategori": {
-          "id": 1,
-          "nama": "Makanan"
-        },
-        "harga": 15000,
-        "foto": "https://tse1.mm.bing.net/th?id=OIP.yn0e5SrfTPm2dq4TCBSrwAHaHa&pid=Api&P=0&h=220"
-      },
-      "id": "71b7"
-    },
-    {
-      "jumlah": 2,
-      "total_harga": 50000,
-      "produk": {
-        "id": "4",
-        "kode": "K004",
-        "nama": "Rendang",
-        "kategori": {
-          "id": 1,
-          "nama": "Makanan"
-        },
-        "harga": 25000,
-        "foto": "https://tse2.mm.bing.net/th?id=OIP.bwotarYmKkpj_onEfeLBuQHaE8&pid=Api&P=0&h=220"
-      },
-      "id": "560c"
-    },
-    {
-      "jumlah": 2,
-      "total_harga": 14000,
-      "produk": {
-        "id": "11",
-        "kode": "K011",
-        "nama": "Keripik Singkong",
-        "kategori": {
-          "id": 3,
-          "nama": "Cemilan"
-        },
-        "harga": 7000,
-        "foto": "https://tse4.mm.bing.net/th?id=OIP.vSlagiYvf_ewb5rpk4kbVAHaEK&pid=Api&P=0&h=220"
-      },
-      "id": "4297"
-    }
-  ],
+  "keranjang": [],
   "pesanan": []
 }

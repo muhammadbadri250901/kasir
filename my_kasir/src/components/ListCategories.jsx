@@ -39,40 +39,39 @@ class ListCategories extends Component {
         console.log(error);
       });
   }
+
   render() {
     const { kategori } = this.state;
     const { changeKategori, kategoriyangdipilih } = this.props;
     return (
-      <>
-        <Col md={2} mt="2">
-          <h4>
-            <strong>Daftar Kategori</strong>
-          </h4>
-          <hr />
-          <ListGroup>
-            {kategori &&
-              kategori.map((kategori) => (
-                <ListGroup.Item
-                  key={kategori.id}
-                  onClick={() => changeKategori(kategori.nama)}
-                  style={{
-                    backgroundColor:
-                      kategoriyangdipilih === kategori.nama ? "#ff6f61" : "",
-                    color: kategoriyangdipilih === kategori.nama ? "white" : "",
-                    fontWeight:
-                      kategoriyangdipilih === kategori.nama ? "bold" : "",
-                    border: "none",
-                    cursor: "pointer",
-                  }}
-                >
-                  <h5>
-                    <Icon nama={kategori.nama} /> {kategori.nama}
-                  </h5>
-                </ListGroup.Item>
-              ))}
-          </ListGroup>
-        </Col>
-      </>
+      <Col md={2} mt="2">
+        <h4>
+          <strong>Daftar Kategori</strong>
+        </h4>
+        <hr />
+        <ListGroup>
+          {kategori &&
+            kategori.map((kategori) => (
+              <ListGroup.Item
+                key={kategori.id}
+                onClick={() => changeKategori(kategori.nama)}
+                style={{
+                  backgroundColor:
+                    kategoriyangdipilih === kategori.nama ? "#ff6f61" : "",
+                  color: kategoriyangdipilih === kategori.nama ? "white" : "",
+                  fontWeight:
+                    kategoriyangdipilih === kategori.nama ? "bold" : "",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                <h5>
+                  <Icon nama={kategori.nama} /> {kategori.nama}
+                </h5>
+              </ListGroup.Item>
+            ))}
+        </ListGroup>
+      </Col>
     );
   }
 }

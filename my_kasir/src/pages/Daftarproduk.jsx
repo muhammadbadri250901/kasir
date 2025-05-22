@@ -10,7 +10,6 @@ import swal from 'sweetalert';
 class Daftarproduk extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       menus: [],
       kategoriyangdipilih: 'Makanan',
@@ -20,6 +19,7 @@ class Daftarproduk extends Component {
 
   componentDidMount() {
     this.getProdukByKategori(this.state.kategoriyangdipilih);
+    this.getKeranjang();
   }
 
   getProdukByKategori = (kategori) => {
@@ -31,29 +31,18 @@ class Daftarproduk extends Component {
       .catch((error) => {
         console.log("Gagal memilih produk:", error);
       });
+  };
 
+  getKeranjang = () => {
     axios
       .get(`${API_URL}keranjang`)
       .then((res) => {
         this.setState({ keranjang: res.data });
       })
       .catch((error) => {
-        console.log("error ya!!", error);
-      }); 
+        console.log("Gagal ambil keranjang:", error);
+      });
   };
-
-  componentDidUpdate(prevState){
-    if(this.state.keranjang !== prevState.keranjang){
-      axios
-      .get(`${API_URL}keranjang`)
-      .then((res) => {
-        this.setState({ keranjang: res.data });
-      })
-      .catch((error) => {
-        console.log("error ya!!", error);
-      }); 
-    }
-  }
 
   changeKategori = (value) => {
     this.setState({
@@ -69,32 +58,20 @@ class Daftarproduk extends Component {
       .get(`${API_URL}keranjang?produk.id=${value.id}`)
       .then((res) => {
         if (res.data.length === 0) {
-          // Produk belum ada di keranjang, tambahkan baru
-          const keranjangsementara = {
+          const keranjangBaru = {
             jumlah: 1,
             total_harga: value.harga,
             produk: value
           };
 
           axios
-            .post(`${API_URL}keranjang`, keranjangsementara)
+            .post(`${API_URL}keranjang`, keranjangBaru)
             .then(() => {
-              swal({
-                title: "Sukses Masuk Keranjang",
-                text: "Produk " + keranjangsementara.produk.nama + " berhasil ditambahkan.",
-                icon: "success",
-                button: false,
-                timer: 1500
-              });
-            })
-            .catch((error) => {
-              console.log("Gagal tambah keranjang:", error);
+              this.getKeranjang();
+              swal("Sukses!", `${value.nama} ditambahkan ke keranjang`, "success");
             });
-
         } else {
-          // Produk sudah ada di keranjang, update jumlah dan total_harga
           const keranjangLama = res.data[0];
-
           const keranjangUpdate = {
             jumlah: keranjangLama.jumlah + 1,
             total_harga: keranjangLama.total_harga + value.harga,
@@ -104,26 +81,16 @@ class Daftarproduk extends Component {
           axios
             .put(`${API_URL}keranjang/${keranjangLama.id}`, keranjangUpdate)
             .then(() => {
-              swal({
-                title: "Keranjang Diperbarui",
-                text: "Jumlah " + keranjangUpdate.produk.nama + " ditambah.",
-                icon: "success",
-                button: false,
-                timer: 1500
-              });
-            })
-            .catch((error) => {
-              console.log("Gagal update keranjang:", error);
+              this.getKeranjang();
+              swal("Diperbarui!", `Jumlah ${value.nama} ditambah`, "success");
             });
         }
-      })
-      .catch((error) => {
-        console.log("Gagal cek keranjang:", error);
       });
   };
 
   render() {
     const { menus, kategoriyangdipilih, keranjang } = this.state;
+
     return (
       <div className="mt-3">
         <Container fluid>
@@ -136,17 +103,16 @@ class Daftarproduk extends Component {
               <h4>Daftar Produk</h4>
               <hr />
               <Row>
-                {menus &&
-                  menus.map((menu) => (
-                    <Menus
-                      key={menu.id}
-                      menu={menu}
-                      masukKeranjang={this.masukKeranjang}
-                    />
-                  ))}
+                {menus.map((menu) => (
+                  <Menus
+                    key={menu.id}
+                    menu={menu}
+                    masukKeranjang={this.masukKeranjang}
+                  />
+                ))}
               </Row>
             </Col>
-            <Hasil keranjang={keranjang}/>
+            <Hasil keranjang={keranjang} getListKeranjang={this.getKeranjang} />
           </Row>
         </Container>
       </div>

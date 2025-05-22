@@ -1,5 +1,3 @@
-// src/components/NavbarComponent.jsx
-
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -10,7 +8,7 @@ const NavbarComponent = () => {
   return (
     <Navbar expand="lg" className="bg-primary" variant="dark">
       <Container>
-        <Navbar.Brand href="/HomeComponent">Kasir Apps</Navbar.Brand>
+        <Navbar.Brand href="/">Kasir Apps</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

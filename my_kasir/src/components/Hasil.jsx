@@ -1,46 +1,79 @@
-import React, {Component} from 'react';
-import {Badge, Col, ListGroup, Row} from 'react-bootstrap';
-import { numberWithCommas } from '../utils/FormatNumber';
-import Menus from './Menus';
-import TotalBayar from './TotalBayar';
+import React, { Component } from 'react';
+import { Col, ListGroup } from 'react-bootstrap';
+import ModalKeranjang from './ModalKeranjang';
+import KeranjangBayar from './KeranjangBayar';
 
 class Hasil extends Component {
-    render() {
-        const { keranjang } = this.props
-        return (
-            <>
-            <Col md={3} mt="2">
-            <h4><strong>Hasil</strong></h4>
-            <hr />
-            {keranjang.lenght !== 0 &&   
-            <ListGroup variant="flush">
-                {keranjang.map((menuKeranjang) =>(
-                <ListGroup.Item>
-                    <Row>
-                        <Col xs={2}>
-                        <h4>
-                            <Badge pill variant="success">
-                                {menuKeranjang.jumlah}
-                            </Badge>
-                        </h4>
-                        </Col>
-                        <Col>
-                        <h5>{menuKeranjang.produk.nama}</h5>
-                        <p>Rp. {numberWithCommas(menuKeranjang.produk.harga)}</p>
-                        </Col>
-                        <Col>
-                        <strong className="float_right">Rp. {numberWithCommas(menuKeranjang.total_harga)}</strong>
-                        </Col>
-                    </Row>
-                </ListGroup.Item>       
-                ))}
-                  </ListGroup> 
-                 }
-                 <TotalBayar keranjang={keranjang}/>
-            </Col>
-            </>
-        );
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+      keranjangDetail: null,
+    };
+  }
+
+  handleShow = (item) => {
+    this.setState({
+      showModal: true,
+      keranjangDetail: item,
+    });
+  };
+
+  handleClose = () => {
+    this.setState({
+      showModal: false,
+      keranjangDetail: null,
+    });
+    this.props.getListKeranjang();
+  };
+
+  render() {
+    const { keranjang } = this.props;
+    const { showModal, keranjangDetail } = this.state;
+
+    return (
+      <Col md={3} className="mt-4">
+        <h4>Keranjang</h4>
+        <hr />
+        {keranjang.length !== 0 ? (
+          <>
+            <ListGroup>
+              {keranjang.map((item) => (
+                <ListGroup.Item
+                  key={item.id}
+                  onClick={() => this.handleShow(item)}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <h5>{item.produk.nama}</h5>
+                  <p>
+                    Harga: <strong>Rp{item.produk.harga}</strong>
+                  </p>
+                  <p>
+                    Jumlah: <strong>{item.jumlah}</strong>
+                  </p>
+                  <p>
+                    Total: <strong>Rp{item.total_harga}</strong>
+                  </p>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+
+            <KeranjangBayar keranjang={keranjang} />
+          </>
+        ) : (
+          <p>Keranjang kosong</p>
+        )}
+
+        {showModal && keranjangDetail && (
+          <ModalKeranjang
+            show={showModal}
+            handleClose={this.handleClose}
+            keranjangDetail={keranjangDetail}
+          />
+        )}
+      </Col>
+    );
+  }
 }
 
 export default Hasil;

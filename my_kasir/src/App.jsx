@@ -11,7 +11,7 @@ function App() {
     <Router>
       <NavbarComponent />
       <Routes>
-        <Route path="/HomeComponent" element={<HomeComponent />} />
+        <Route path="/" element={<HomeComponent />} />
         <Route path="/Daftarproduk" element={<Daftarproduk />} />
         <Route path="/Sukses" element={<Sukses />} />
       </Routes>
